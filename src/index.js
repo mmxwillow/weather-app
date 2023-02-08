@@ -1,1 +1,3 @@
-console.log("test");
+import fetchData from "./fetch-data";
+
+fetchData('warsaw');
