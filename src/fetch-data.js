@@ -27,7 +27,9 @@ function processData(data){
 export default async function fetchData(city) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=9bd7a3b458df4663d1c3e2bcda89b19d&units=imperial`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=9bd7a3b458df4663d1c3e2bcda89b19d&units=imperial`, {
+        mode: 'cors'
+      }
     );
 
     if(response.status !== 200) throw new Error('City not found');
