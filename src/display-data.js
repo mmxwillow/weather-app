@@ -27,7 +27,7 @@ export default function displayData(data){
     temp = data;
     const tempUnits = `<sup>${units[system].temp}</sup>`;
 
-    img.src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
+    img.src = `https://openweathermap.org/img/wn/${data.icon}@2x.png`;
     location.innerHTML = `${data.city}, ${data.country}`;
     currentTemp.innerHTML = data[system].temp + tempUnits;
     description.innerHTML = data.description;
