@@ -3,10 +3,28 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:0;
     margin:0;
+    line-height: 1;
 }
 
 body{
+    height:calc(100vh - 4rem);
+    padding:2rem;
     background-color: #111;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    overflow: hidden;
+}
+
+form{
+    display: grid;
+    place-self: end;
+}
+
+.search-error{
+    color:rgb(172, 51, 51);
+    padding: 0.5rem 1rem;
+    font-size:14px;
 }
 
 input{
@@ -14,10 +32,52 @@ input{
     padding:0.5rem 1rem;
     border:1px solid #121212;
     border-radius: 2rem;
+    width:calc(var(--input-width) + 4px);
+    height: 34px;
+    box-sizing: border-box;
+}
+
+input:is(:hover, :focus){
+    outline:transparent;
+    border:1px solid #3c3c3c;
+}
+
+main{
+    place-self: center;
+    place-items: center;
+    grid-column: span 2;
+    display:grid;
+    position: relative;
+}
+
+main > div{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+main>div:nth-last-child(-n+3){
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+img{
+    margin:auto;
+    scale: 700%;
+    filter:blur(1px) opacity(40%);
+    z-index: -1;
+    position:absolute;
+}
+
+.location{
+    font-size:20px;
+}
+
+.description{
+    font-size:30px;
 }
 
 .temp{
-    font-size: 30px;
+    font-size: 100px;
 }
 
 sup{
@@ -49,7 +109,8 @@ sup{
     content: attr(data-on);
     position: absolute;
     font-size: 12px;
-    top: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 20px;
 }
 
@@ -88,5 +149,42 @@ input[type="checkbox"]:checked + label:before{
 }
 
 
+@media (max-width: 600px) {
+    :root{
+        --input-width:10rem;
+    }
+    img{
+        scale: 650%;
+    }
+}
 
+@media (max-width:450px) {
+    :root{
+        --input-width:8rem;
+    }
+    body{
+        padding: 1rem;
+    }
+    img{
+        scale: 500%;
+    }
+    .location{
+        font-size:16px;
+    }
+    
+    .description{
+        font-size:24px;
+    }
+    
+    .temp{
+        font-size: 80px;
+    }
+    
+    main>div:nth-last-child(-n+3){
+        font-size:12px;
+    }
 
+    .switch > label:before, label:after, input, .search-error{
+        font-size:10px;
+    }
+}

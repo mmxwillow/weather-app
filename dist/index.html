@@ -9,15 +9,19 @@
   </head>
   <body>
     <label class="switch">
-          <input type="checkbox" name="color_mode" id="color_mode" value="1">
+          <input type="checkbox" name="color_mode" id="color_mode" value="1" checked>
           <label for="color_mode" data-on="Metric" data-off="Imperial"></label>
     </label>
     <form action="">
       <input type="text" placeholder="Search">
+      <span class="search-error">City not found.</span>
     </form>
     <main>
-      <div class="temp">1<sup>°C</sup></div>
+      <div class="location"></div>
       <div class="description">Cloudy</div>
+      <div class="temp">1<sup>°C</sup></div>
+      <img src="">
+
       <div class="feels-like">0<sup>°C</sup></div>
       <div class="humidity">98%</div>
       <div class="wind">10km/h</div>
