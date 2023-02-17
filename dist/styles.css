@@ -1,190 +1,200 @@
-*{
-    color:white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding:0;
-    margin:0;
-    line-height: 1;
+* {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
 }
 
-body{
-    height:calc(100vh - 4rem);
-    padding:2rem;
-    background-color: #111;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content 1fr;
-    overflow: hidden;
+body {
+  height: calc(100vh - 4rem);
+  padding: 2rem;
+  background-color: #111;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content 1fr;
+  overflow: hidden;
 }
 
-form{
-    display: grid;
-    place-self: end;
+form {
+  display: grid;
+  place-self: end;
 }
 
-.search-error{
-    color:rgb(172, 51, 51);
-    padding: 0.5rem 1rem;
-    font-size:14px;
+.search-error {
+  display: none;
+  color: rgb(172, 51, 51);
+  padding: 0.5rem 1rem;
+  font-size: 14px;
 }
 
-input{
-    background-color:#222;
-    padding:0.5rem 1rem;
-    border:1px solid #121212;
-    border-radius: 2rem;
-    width:calc(var(--input-width) + 4px);
-    height: 34px;
-    box-sizing: border-box;
+input {
+  background-color: #222;
+  padding: 0.5rem 1rem;
+  border: 1px solid #121212;
+  border-radius: 2rem;
+  width: calc(var(--input-width) + 4px);
+  height: 34px;
+  box-sizing: border-box;
 }
 
-input:is(:hover, :focus){
-    outline:transparent;
-    border:1px solid #3c3c3c;
+input:is(:hover, :focus) {
+  outline: transparent;
+  border: 1px solid #3c3c3c;
 }
 
-main{
-    place-self: center;
-    place-items: center;
-    grid-column: span 2;
-    display:grid;
-    position: relative;
+main {
+  place-self: center;
+  place-items: center;
+  grid-column: span 2;
+  display: grid;
+  position: relative;
 }
 
-main > div{
-    text-transform: uppercase;
-    text-align: center;
+main > div {
+  text-transform: uppercase;
+  text-align: center;
 }
 
-main>div:nth-last-child(-n+3){
-    font-weight: 100;
-    line-height: 1.5;
+main > div:nth-last-child(-n + 3) {
+  font-weight: 100;
+  line-height: 1.5;
 }
 
-img{
-    margin:auto;
-    scale: 700%;
-    filter:blur(1px) opacity(40%);
-    z-index: -1;
-    position:absolute;
+img {
+  margin: auto;
+  scale: 700%;
+  filter: blur(1px) opacity(40%);
+  z-index: -1;
+  position: absolute;
 }
 
-.location{
-    font-size:20px;
+.location {
+  font-size: 20px;
 }
 
-.description{
-    font-size:30px;
+.description {
+  font-size: 30px;
 }
 
-.temp{
-    font-size: 100px;
+.temp {
+  font-size: 100px;
 }
 
-sup{
-    font-size:0.5em;
+sup {
+  font-size: 0.5em;
 }
 
-
-:root{
-    --input-width: 11rem;
-    --switch-width: calc(var(--input-width) / 2);
-    --color-1: rgb(78, 140, 216);
-    --color-2: rgb(77, 185, 117);
+footer {
+  grid-column: span 2;
+  font-size: 10px;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.switch > label{
-    font-size: 12px;
-    width: var(--input-width);
-    height: 30px;
-    border-radius: 26px;
-    position: relative;
-    transition: all 0.6s ease;
-    display: block;
-    border:2px solid var(--color-1);
-    background: var(--color-1);
-    color: #fff;
+:root {
+  --input-width: 11rem;
+  --switch-width: calc(var(--input-width) / 2);
+  --color-1: rgb(78, 140, 216);
+  --color-2: rgb(77, 185, 117);
 }
 
-.switch > label:before{
-    content: attr(data-on);
-    position: absolute;
-    font-size: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
+.switch > label {
+  font-size: 12px;
+  width: var(--input-width);
+  height: 30px;
+  border-radius: 26px;
+  position: relative;
+  transition: all 0.6s ease;
+  display: block;
+  border: 2px solid var(--color-1);
+  background: var(--color-1);
+  color: #fff;
 }
 
-.switch > label:after{
-    content: attr(data-off);
-    width: var(--switch-width);
-    height: 30px;
-    background: #3c3c3c;
-    border-radius: 26px;
-    position: absolute;
-    transition: all 0.6s ease;
-    box-shadow: 0px 0px 8px -2px #111;
-    display:grid;
-    place-content: center;
-    left:0;
+.switch > label:before {
+  content: attr(data-on);
+  position: absolute;
+  font-size: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
 }
 
-input[type="checkbox"]{
-    opacity: 0;
-    position: absolute;
+.switch > label:after {
+  content: attr(data-off);
+  width: var(--switch-width);
+  height: 30px;
+  background: #3c3c3c;
+  border-radius: 26px;
+  position: absolute;
+  transition: all 0.6s ease;
+  box-shadow: 0px 0px 8px -2px #111;
+  display: grid;
+  place-content: center;
+  left: 0;
 }
 
-input[type="checkbox"]:checked + label{
-    border:2px solid var(--color-2);
-    background: var(--color-2);
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
 }
 
-input[type="checkbox"]:checked + label:after{
-    content: attr(data-on);
-    left: var(--switch-width);
+input[type="checkbox"]:checked + label {
+  border: 2px solid var(--color-2);
+  background: var(--color-2);
 }
 
-input[type="checkbox"]:checked + label:before{
-    content: attr(data-off);
-    left: 20px;
+input[type="checkbox"]:checked + label:after {
+  content: attr(data-on);
+  left: var(--switch-width);
 }
 
+input[type="checkbox"]:checked + label:before {
+  content: attr(data-off);
+  left: 20px;
+}
 
 @media (max-width: 600px) {
-    :root{
-        --input-width:10rem;
-    }
-    img{
-        scale: 650%;
-    }
+  :root {
+    --input-width: 10rem;
+  }
+  img {
+    scale: 650%;
+  }
 }
 
-@media (max-width:450px) {
-    :root{
-        --input-width:8rem;
-    }
-    body{
-        padding: 1rem;
-    }
-    img{
-        scale: 500%;
-    }
-    .location{
-        font-size:16px;
-    }
-    
-    .description{
-        font-size:24px;
-    }
-    
-    .temp{
-        font-size: 80px;
-    }
-    
-    main>div:nth-last-child(-n+3){
-        font-size:12px;
-    }
+@media (max-width: 450px) {
+  :root {
+    --input-width: 8rem;
+  }
+  body {
+    padding: 1rem;
+  }
+  img {
+    scale: 500%;
+  }
+  .location {
+    font-size: 16px;
+  }
 
-    .switch > label:before, label:after, input, .search-error{
-        font-size:10px;
-    }
+  .description {
+    font-size: 24px;
+  }
+
+  .temp {
+    font-size: 80px;
+  }
+
+  main > div:nth-last-child(-n + 3) {
+    font-size: 12px;
+  }
+
+  .switch > label:before,
+  label:after,
+  input,
+  .search-error {
+    font-size: 10px;
+  }
 }

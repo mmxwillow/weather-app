@@ -5,7 +5,8 @@ const humidity = document.querySelector('.humidity');
 const wind = document.querySelector('.wind');
 const location = document.querySelector('.location')
 const img = document.querySelector('img');
-const toggle = document.querySelector('input[type="checkbox"]')
+const toggle = document.querySelector('input[type="checkbox"]');
+const errorMessage = document.querySelector('.search-error'); 
 
 let system = 'metric';
 let temp = {};
@@ -33,6 +34,7 @@ export default function displayData(data){
     feelsLike.innerHTML = `feels like: ${  data[system].feels_like  }${tempUnits}`;
     humidity.innerHTML = `humidity: ${data.humidity}%`;
     wind.innerHTML = `wind: ${data[system].wind} ${units[system].speed}`;
+    errorMessage.style.display = 'none';
 }
 
 toggle.addEventListener('change', () => {

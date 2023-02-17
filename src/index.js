@@ -9,4 +9,5 @@ form.addEventListener('submit', (ev) => {
     ev.preventDefault();
     const searchValue = searchInput.value;
     fetchData(searchValue);
+    form.reset();
 })

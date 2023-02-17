@@ -1,5 +1,7 @@
 import displayData from "./display-data";
 
+const errorMessage = document.querySelector('.search-error'); 
+
 function processData(data){
   const weather = {
     city: data.name,
@@ -33,6 +35,7 @@ export default async function fetchData(city) {
   
     displayData(processData(data));
   } catch (e) {
+    errorMessage.style.display = 'inherit';
     console.error(e);
   }
 }
